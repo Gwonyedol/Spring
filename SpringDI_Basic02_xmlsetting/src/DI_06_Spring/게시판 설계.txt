@@ -1,0 +1,12 @@
+MVC 패턴 게시판
+1. 요구사항 : Oracle 연동 (create table Article, Mysql 연동 (create table Article
+2. MVC 패턴으로 작업
+
+
+Model 단
+1. DTO(VO) : Article
+2. DAO : ArticleDao (인터페이스 설계) -> 함수의 이름 동일(insert) -> OracleDao, MysqlDao
+3. ArticleDao 구현하는 OracleDao, ArticleDao 구현하는 MysqlDao
+4. service 클래스 
+
+요청 -> Controller -> Service(O) -> DAO 생성(O) -> 필요하다면 DTO 생성(O) -> Controller -> View 구현 -> 응답

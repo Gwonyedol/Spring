@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- 
+		IOC 컨테이너 (Spring 전용 메모리 공간) 안에 생성 될  [객체 만들고 조립하는(의존)] 설정
+		>> xml 문서 annotation
+		>> DI_04.xml
+		
+		: 제어의 역전 (프로그램의 제어구조를 바꾼다)
+		: 작은 단위의 부품을 만들어 놓고, 그것을 조립하는 행위 (레고 블럭처럼)
+
+  		  
+      
+      
+     DI 문법
+     <bean id="한개의 이름 (식별자)" name="여러개의 이름 >> 구분자 (,) (공백), (;)"
+     ex)
+     <bean id="" class="" name="m1,m2 m3;m4"
+     
+     ** 객체를 생성하고 필요한 객체를 주입
+     ** 주입방법  : 생성자 주입 (의무적)
+     						 setter 함수 주입 (일반적 : 선택적)
+     			
+     java 코드
+      List<MyFilter> list = new ArrayList<MyFilter>();
+      list.add(new EncFilter());
+      list.add(new HeaderFilter());
+      list.add(new ZipFilter());
+      
+      handler.setFilter(list);
+      
+ -->
+		<!-- 
+		1단계 : 필요한 bean 모두 생성
+		사용자가 직접 만든 클래스가 아니라 JAVA API 제공하는 클래스 (Collection)
+		setter 주입 > Collection > xml 제공하는 <list>, <map>, <set> 요소를 제공한다
+		 -->
+			<!-- <bean id="encfilter" class="DI_07_Spring.EncFilter"></bean>
+			<bean id="headerfilter" class="DI_07_Spring.HeaderFilter"></bean>
+			<bean id="zipfilter" class="DI_07_Spring.ZipFilter"></bean>
+ 		
+ 			<bean id="" class="DI_07_Spring.ProtocolHandler">
+ 				<property name="filters">
+						<list>
+							<ref bean="encfilter"/>
+							<ref bean="headerfilter"/>
+							<ref bean="zipfilter"/>
+						</list> 				
+ 				</property>
+ 			</bean> -->
+ 			
+ 			<!-- 2단계 	-->
+ 			
+ 		
+ 		
+ 			<bean id="protocolhandler" class="DI_07_Spring.ProtocolHandler">
+ 				<property name="filters">
+						<list> <!-- 안에서 bean 생성 id 속성은 쓰지않느다 -->
+							<bean id="" class="DI_07_Spring.EncFilter"></bean>
+							<bean id="" class="DI_07_Spring.HeaderFilter"></bean>
+							<bean id="" class="DI_07_Spring.ZipFilter"></bean>
+						</list> 				
+ 				</property>
+ 			</bean>
+ 			
+</beans>

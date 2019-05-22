@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- 
+		IOC 컨테이너 (Spring 전용 메모리 공간) 안에 생성 될  [객체 만들고 조립하는(의존)] 설정
+		>> xml 문서 annotation
+		>> DI_04.xml
+		
+		: 제어의 역전 (프로그램의 제어구조를 바꾼다)
+		: 작은 단위의 부품을 만들어 놓고, 그것을 조립하는 행위 (레고 블럭처럼)
+
+  		  MyBean mybean = new MyBean();
+        MyBean mybean2 = new MyBean("hong");
+        
+        Singleton single = Singleton.getInstance();
+        Singleton single2 = Singleton.getInstance();
+      
+      
+     DI 문법
+     <bean id="한개의 이름 (식별자)" name="여러개의 이름 >> 구분자 (,) (공백), (;)"
+     ex)
+     <bean id="" class="" name="m1,m2 m3;m4"
+     
+     ** 객체를 생성하고 필요한 객체를 주입
+     ** 주입방법  : 생성자 주입 (의무적)
+     						 setter 함수 주입 (일반적 : 선택적)
+     						 
+ -->
+		<bean id="mybean" class="DI_05_Spring.MyBean"></bean>
+		<bean id="mybean2" class="DI_05_Spring.MyBean">
+			<constructor-arg value="hong"/>
+		</bean>
+		
+		<bean id="single" class="DI_05_Spring.Singleton" factory-method="getInstance"></bean> 
+		<!-- 
+				xml 설정을 통해서 : singleton
+				Singleton single = Singleton.getInstance();
+				
+				3.x.x 버전 : factory-method="getInstance"
+				4.x.x 버전 이후 : factory-method="getInstance" 생략 가능 (컨테이너 처리)
+				가독성 : factory-method="getInstance"
+		 -->
+			
+ 
+</beans>
