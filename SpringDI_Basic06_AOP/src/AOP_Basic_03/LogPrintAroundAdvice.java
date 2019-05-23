@@ -32,7 +32,7 @@ public class LogPrintAroundAdvice implements MethodInterceptor {
 		log.info("타이머 시작");
 		
 		//주업무 (실객체의 함수 호출)
-	    Object result=method.proceed();
+	    Object result2=method.proceed();
 		
 	  //보조(공통) 업무
 	  sw.stop();
@@ -40,7 +40,7 @@ public class LogPrintAroundAdvice implements MethodInterceptor {
 	  log.info("[TIME LOG] Method : ADD");
 	  log.info("[TIME LOG] Method TIME : " + sw.getTotalTimeMillis());
 	  	
-	  return result;
+	  return result2;
 	}
 
 }

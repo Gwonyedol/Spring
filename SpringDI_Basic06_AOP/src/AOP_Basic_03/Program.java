@@ -11,8 +11,8 @@ public class Program {
 	 ApplicationContext context = new GenericXmlApplicationContext("classpath:AOP_Basic_03/ApplicationContext.xml");
 		Calc calc= context.getBean("proxy",Calc.class);
 		
-		int result = calc.ADD(10000, 50000);
-		System.out.println("결과 : " + result);
+		int result1 = calc.ADD(10000, 50000);
+		System.out.println("결과 : " + result1);
 	}
 
 }
