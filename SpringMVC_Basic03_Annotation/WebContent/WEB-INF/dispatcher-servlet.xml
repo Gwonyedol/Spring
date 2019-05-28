@@ -13,7 +13,21 @@ IOC 컨테이너에 적재될 bean 객체 생성과 injection (DI)
 <!-- 
 의존 관계에 필용한 빈 객체 자동 생성
 @Autowired , @Resource 동작하기 위한 빈객체 .....
+
+**** <context:component-scan base-package="com.controller" /> *****
+선언부에 있으면
+@Component
+@Repository
+@Service
+@Controller
+
+annotation 을 가진 class 에 대해서 
+<bean id=""> 별도로 생성할 필요 없다
+자동으로 빈 객체 생성 됩니다 
+***********************************************
+
  -->
+
 <context:annotation-config />
 
 <!-- 공통 빈  -->
@@ -44,6 +58,43 @@ id, name 참조가(injection) (0)
 -->
 	<bean class="com.controller.NewArticleController"></bean>
 	<bean class="com.service.ArticleService"></bean>
+	
+<!-- TEST_3  : GET, POST (LIST<>)-->
+	<bean class="com.controller.OrderController"></bean>
+
+
+<!-- TEST_4 -->
+<!--
+parameter 설정하기 (@RequestParam 연습하기)
+-->	
+  <bean class="com.controller.SearchController"></bean>
+  
+<!-- TEST_5 -->
+<!--  
+	@Cookievalue annotation 사용하기
+-->  
+  <bean class="com.controller.CookieController"></bean>
+  
+<!-- TEST_6 -->
+<!--  
+파일업로드 :
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+CommonsMultipartFile 을 사용하기 위해서는 CommonsMultipartResolver 빈객체가
+IOC 컨테이너 생성되어 있어야 한다
+
+CommonsMultipartResolver 역할 : Upload 파일의 정보를 관리(크기 , 이름)
+
+의존객체:
+com.springsource.org.apache.commons.fileupload
+com.springsource.org.apache.commons.io
+
+-->  
+<bean class="com.controller.ImageController"></bean>
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<property name="maxUploadSize" value="10485760"></property> <!-- 10M -->
+</bean>
+   
 </beans> 
 
 

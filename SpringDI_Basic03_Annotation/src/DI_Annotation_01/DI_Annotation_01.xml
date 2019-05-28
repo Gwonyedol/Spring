@@ -61,8 +61,10 @@
             원칙) @Resource (by name)
     -->
     <context:annotation-config /> 
-    <bean id="recorder" class="DI_Annotation_01.Recorder"></bean>
-    <bean id="viewer" class="DI_Annotation_01.MonitorViewer"></bean>
+    <bean id="recorder" class="DI_Annotation_01.Recorder"></bean> //recorder 객체 생성
+    <bean id="viewer" class="DI_Annotation_01.MonitorViewer"></bean> //viewer 객체 생성....
+<!--     <bean id="a" class="DI_Annotation_01.Recorder"></bean>
+    <bean id="b" class="DI_Annotation_01.Recorder"></bean> -->
     
 <!--     <bean id="a" class="DI_Annotation_01.Recorder"></bean>
     <bean id="b" class="DI_Annotation_01.Recorder"></bean>

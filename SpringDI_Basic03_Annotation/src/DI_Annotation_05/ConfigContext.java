@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ConfigContext {
 	
-	@Bean//객체생성을 처리할 수 있는 Anntation ( 꼭 붙여줘야한다 중요쓰..! )
+	@Bean//객체생성을 처리할 수 있는 Annotation ( 꼭 붙여줘야한다 중요쓰..! )
 	public User user() { //함수 이름 id ==  <bean id="user" class="DI_Annotation_05.User">
 		return new User();
 	}

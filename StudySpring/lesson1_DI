@@ -1,0 +1,97 @@
+Spring 기초
+
+
+
+1. 객체 의존성
+
+A객체가 B객체를 참조 하고있으면 A객체는 B에 의존성을 가진다
+
+public class PetOwner{
+    private AnimalType animal;
+
+    public PetOwner() {
+        this.animal = new Dog();
+    }
+}
+
+-PetOwner는 AnimalType에 의존한다
+-이 접근법의 문제점 : 하나의 모듈이 바뀌면 의존한 다른 모듈까지 변경 되어야 한다
+
+
+2. 의존성 주입(DI)
+
+-객체 자체가 아니라 Framework에 의해서 의존성이 주입되는 설계 패턴이다.
+
+Bean A --------------> Bean B
+
+      [Bean Container]
+      
+-의존성주입(DI)와 제어의역전(IOC)는 같은 의미로 사용된다
+-IOC 프로그램 제어권을 framework가 가져가는것
+-개발자가 xml, annotation 을 설정만 하면 Container가 알아서 처리한다
+-우리는 Framework속에서 프로그래밍을 하는것
+
+
+3. 의존성 주입방법(3가지)
+
+-Contructor Injection
+생성자를 통한 전달
+<constructor-arg ref=""></constructor-arg>
+
+-method(setter) injection
+setter를 통한 전달
+<property name="" value=""></property>
+
+-field injection
+멤버 변수를 통한 전달
+
+
+4. Spring Container
+
+DI를 사용하여 bean객체를 관리한다
+
+역할)
+- 객체(bean)을 생성하고
+- 객체를 묶고 구성하고
+- lifecycle을 관리
+
+설정방법)
+- xml (빈 객체 정의, 의존성 주입)
+- Java Annotation
+- java code
+
+유형)
+- beanfactory : 주로 단순한 DI에서만 사용한다
+- applicationContext : resources가 제한되어있지 않은 모든곳에서 사용
+
+/* main함수에서 Contaier를 생성 */
+// 설정 파일은 인자로 넣고, 해당 설정 파일에 맞게 bean들을 만든다.
+ApplicationContext context = 
+ new ClassPathXmlApplicationContext("spring/di/beans/bean.xml");
+// getBean()을 통해 bean의 주소값을 가져온다.  
+HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+https://gmlwjd9405.github.io/2018/11/09/dependency-injection.html
+
+
+
+
+-------------------------------
+
+
+
+ Annotation
+
+ 
+ 1. 의존 자동 주입
+ 
+ 1]자동 주입 대상에 @Autowired 어노테이션 사용
+ 2]XML 설정에 <context:annotation-config/> 설정 추가
+ 
+ @Autowired가 적용된 의존 주입 대상에 대해서는 <property>태그나 <constructor-arg>태그를 사용하지 않아도
+ 스프링이 알맞게 의존 객체를 주입해 준다
+ 
+ @Autowired(requier=false) 인 경우는..?
+ -> 이렇게 지정된 경우에는 해당 타입에 맞는 빈객체가 존재하지 않는다고 해도 예외를 발생시키지는 않는다. null값이 나옴
+
+ 
+ 

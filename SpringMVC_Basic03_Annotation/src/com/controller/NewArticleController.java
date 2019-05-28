@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -81,10 +82,10 @@ public class NewArticleController {
 	   
 	       
 	2. 객체의 이름이 자동으로 생성되는 것이 싫어요
-	submit(@ModelAttribute("Articledata") NewArticleCommand command)
-	>>자동으로 생성되는 변수명이 Articledata 강제 (key: Articledata)
+	   submit(@ModelAttribute("Articledata") NewArticleCommand command) 
+	   >>자동으로 생성되는 객체변수명이 Articledata 강제 (key : Articledata)
 	
-	3. Model.addAttribute("Articledata",new NewArticleCommand)
+	
 	
 	
 	*/

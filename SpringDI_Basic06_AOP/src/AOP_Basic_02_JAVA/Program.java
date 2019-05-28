@@ -6,7 +6,6 @@ public class Program {
 	
 	public static void main(String[] args) {
 		Calc calc = new NewCalc();
-		calc.ADD(100, 200);
 		
 		//Proxy 객체를 통해서 처리
 		

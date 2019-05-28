@@ -59,15 +59,15 @@
     <bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
         <property name="proxyInterfaces">
             <list>
-                <value>AOP_Basic_07.Calc</value>
+                <value>AOP_Basic_06.Calc</value>
             </list>
         </property>
         <property name="target" ref="calc"></property>
         <property name="interceptorNames">
             <list>
-                            <!-- <value>logPrintBeforeAdvice</value>
-                            <value>logPrintAfterAdvice</value> -->
-                            <value>defaultPointcutAdvisor</value>
+                            <value>logPrintBeforeAdvice</value>
+                            <value>logPrintAfterAdvice</value>
+                            <!-- <value>defaultPointcutAdvisor</value> -->
             </list>
         </property>
     </bean>

@@ -29,7 +29,8 @@
     <context:annotation-config /> 
     
     <bean id="viewer" class="DI_Annotation_03.MonitorViewer"></bean>
-    <bean id="recorder" class="DI_Annotation_03.Recorder"></bean>
+    <!-- <bean id="recorder" class="DI_Annotation_03.Recorder"></bean> -->
+    <!--<bean id="a" class="DI_Annotation_03.Recorder"></bean>-->
 
 
     

@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="SpringMVC_Basic01_Controller" path="/SpringMVC_Basic01_Controller" reloadable="true" source="org.eclipse.jst.jee.server:SpringMVC_Basic01_Controller"/><Context docBase="SpringMVC_Basic03_Annotation" path="/SpringMVC_Basic03_Annotation" reloadable="true" source="org.eclipse.jst.jee.server:SpringMVC_Basic03_Annotation"/></Host>
+      <Context docBase="SpringMVC_Basic01_Controller" path="/SpringMVC_Basic01_Controller" reloadable="true" source="org.eclipse.jst.jee.server:SpringMVC_Basic01_Controller"/><Context docBase="SpringMVC_Basic03_Annotation" path="/SpringMVC_Basic03_Annotation" reloadable="true" source="org.eclipse.jst.jee.server:SpringMVC_Basic03_Annotation"/><Context docBase="SpringMVC_Basic05_JdbcTemplate" path="/SpringMVC_Basic05_JdbcTemplate" reloadable="true" source="org.eclipse.jst.jee.server:SpringMVC_Basic05_JdbcTemplate"/><Context docBase="SpringMVC_Basic08_WebSite_Annotation_JdbcTemplate_Tiles" path="/SpringMVC_Basic08_WebSite_Annotation_JdbcTemplate_Tiles" reloadable="true" source="org.eclipse.jst.jee.server:SpringMVC_Basic08_WebSite_Annotation_JdbcTemplate_Tiles"/><Context docBase="project" path="/project" reloadable="true" source="org.eclipse.jst.jee.server:project"/></Host>
     </Engine>
   </Service>
 </Server>

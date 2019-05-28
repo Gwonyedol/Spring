@@ -26,7 +26,7 @@
 		추가설정 : 동일타입의 빈객체 설정에서 <qualifier value="[alias명]" />를 추가하여 준다.
 		옵션 : name - alias명
     -->
-    <context:annotation-config /> 
+    <context:annotation-config /> <!-- 이걸 설정하면 qualifier,autowire 등등 다 설정된당  -->
     
     <bean id="viewer" class="DI_Annotation_02.MonitorViewer"></bean>
     <bean id="xx" class="DI_Annotation_02.Recorder">

@@ -47,8 +47,8 @@ public class MonitorViewer {
 		return recorder;
 	}
 	
-	//@Autowired(required=true) 기본 설정 (무조건:injection) 
-	@Autowired(required=false) //타입기반(IOC 컨테이너 안에 Record 타입을 가지는 객체가 있으면 자동으로 주입
+	//@Autowired(required=true) //기본 설정 (무조건:injection) 
+	@Autowired(required=false) //타입기반(IOC 컨테이너 안에 Record 타입을 가지는 객체가 있으면 자동으로 주입 
 	public void setRecorder(Recorder recorder) {
 		this.recorder = recorder;
 		System.out.println("setter 주입 성공 :" + recorder);
